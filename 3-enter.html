@@ -33,6 +33,7 @@
 
       setTimeout(() => {
         //根据node元素绑定的data数量，动态新增P节点
+        // 如果不一致，数组元素个数比p节点多，就插入p节点补足并相应更新文本
         // Enter…
         node
           .enter()
@@ -41,7 +42,7 @@
             return d;
           });
 
-        // Exit…
+        // 如果不一致，数组元素个数比p节点少，就删除多余的p节点
         node.exit().remove();
       }, 3000);
     </script>
