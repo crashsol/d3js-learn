@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./node_modules/d3/dist/d3.min.js"></script>
+  </head>
+  <body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+      d3.selectAll("p")
+        .data([14, 16, 18, 20, 22, 24])
+        .style("font-size", (d, i) => {
+          return d + "px";
+        })
+        .text((d, i) => {
+          return `第 ${i} 个,数字： ${d}`;
+        });
+    </script>
+  </body>
+</html>
