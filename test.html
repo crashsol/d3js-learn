@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <svg
+      style="display: inline-block; margin-left: 2em"
+      width="220"
+      height="220"
+      viewBox="0 0 220 220"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <style>
+          .arrow-stroke {
+            stroke: #00b400;
+            stroke-width: 28;
+            /* marker-end etc should be supported but unsure of browser support */
+          }
+          .arrow-fill {
+            stroke: white;
+            stroke-width: 20;
+          }
+        </style>
+        <marker
+          id="arrow"
+          markerWidth="45"
+          markerHeight="70"
+          refX="5"
+          refY="35"
+          orient="auto"
+          markerUnits="userSpaceOnUse"
+        >
+          <path
+            fill="#fff"
+            stroke="#00b400"
+            stroke-width="4"
+            d="M 2 25  v-20  l 40,30 -40,30 v-20"
+          />
+        </marker>
+
+        <!-- Used to hide hairline that shows through, fill color must match background color -->
+        <marker
+          id="startMask"
+          markerWidth="2"
+          markerHeight="30"
+          refX="1"
+          refY="15"
+          orient="auto"
+          markerUnits="userSpaceOnUse"
+        >
+          <path fill="#ddd" d="M0 0 v30 h2 v-30 z" />
+        </marker>
+
+        <symbol id="line">
+          <path d="M 159.8 30.3  h -110 v 120" />
+        </symbol>
+
+        <symbol id="line2">
+          <path d="M 140 60 l 20 30" />
+        </symbol>
+        <symbol id="line3">
+          <path d="M 100 80 q 0 40 20 70" />
+        </symbol>
+      </defs>
+
+      <path id="grey-box" fill="#ddd" stroke="#3f4141" d="M0 0h220v220H0z" />
+
+      <g fill="none">
+        <use xlink:href="#line" class="arrow-stroke" />
+        <use
+          xlink:href="#line"
+          class="arrow-fill"
+          marker-end="url(#arrow)"
+          marker-start="url(#startMask)"
+        />
+
+        <use xlink:href="#line2" class="arrow-stroke" />
+        <use
+          xlink:href="#line2"
+          class="arrow-fill"
+          marker-end="url(#arrow)"
+          marker-start="url(#startMask)"
+        />
+
+        <use xlink:href="#line3" class="arrow-stroke" />
+        <use
+          xlink:href="#line3"
+          class="arrow-fill"
+          marker-end="url(#arrow)"
+          marker-start="url(#startMask)"
+        />
+      </g>
+    </svg>
+  </body>
+</html>
